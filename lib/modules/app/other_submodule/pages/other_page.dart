@@ -1,9 +1,11 @@
+import 'package:estudo_modulo/modules/app/other_submodule/providers/other_provider.dart';
 import 'package:estudo_modulo/modules/core/providers/application_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class OtherPage extends StatelessWidget {
   final applicationProvider = Modular.get<ApplicationProvider>();
+  final otherProvider = Modular.get<OtherProvider>();
 
   OtherPage({super.key});
 
@@ -18,6 +20,9 @@ class OtherPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              'Sub value provider: ${otherProvider.otherValue}',
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
